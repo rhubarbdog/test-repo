@@ -1,2 +1,4 @@
 # test-repo
-dummy repository to learn git
+dummy repository to learn GitHub and `git`
+
+A second line
