@@ -21,30 +21,30 @@ taking those processor cycles and vital micro seconds.
 </br>
 </br>
 Press and release the USR switch to start the tranmitter <code>log_Tx.py
-<\code>. The transmitter calls the <code>.begin()<\code> method and returns.
+</code>. The transmitter calls the <code>.begin()</code> method and returns.
 Keep it running with a loop controlled by pressing the USR switch to
-terminate. The <code>.end()<\code> method is optional it stops the tranmitter
+terminate. The <code>.end()</code> method is optional it stops the tranmitter
 and restores garbage collection.
 </br>
 </br>
-<code>log_Rx.py<\code> starts by calling the <code>.begin()<\code> method.
+<code>log_Rx.py</code> starts by calling the <code>.begin()</code> method.
 Press the USR switch to terminate. You must call the <code>.end(wait = 0)
-<\code> method, it writes the remaining buffers to file and closes it.
+</code> method, it writes the remaining buffers to file and closes it.
 </br>
 </br>
-Start the logger <code>log_Rx.py<\code> before <code>log_Tx.py<\code> it won't
+Start the logger <code>log_Rx.py</code> before <code>log_Tx.py</code> it won't
 record anything until the transmitter sends it. How ever if you allow <code>
-log_Tx.py<\code> to start first results will be missed and in the worst case
+log_Tx.py</code> to start first results will be missed and in the worst case
 the data will be corrupt.
 </br>
 </br>
-The transmitter <code>logger_Tx<\code> has a <code>.timed()<\code> method.
+The transmitter <code>logger_Tx</code> has a <code>.timed()</code> method.
 It's use is to determine the period in micro seconds of the  <code>
-.transmit()<\code> method. Using a REPL prompt or the <code>pyboard.py<\code>
+.transmit()</code> method. Using a REPL prompt or the <code>pyboard.py</code>
 command initiate you logger with a guessed frequency. <code>log =
-data_logger.logger_Tx(1, ('X1', 'X2', 'X3'), 12, 400)<\code> sets up a
+data_logger.logger_Tx(1, ('X1', 'X2', 'X3'), 12, 400)</code> sets up a
 transmitter on UART 1 with 3 ADC pins using timer 12 at 400Hz. Make multiple
-calls to <code>log.timed()<\code> to determine the usual period and outlier
+calls to <code>log.timed()</code> to determine the usual period and outlier
 period. The fisrt call takes upto 250 micro seconds longer, this time isn't
 repeated in the data set and can be ignored.
 </br>
