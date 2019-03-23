@@ -28,8 +28,9 @@ and restores garbage collection.
 </br>
 </br>
 <code>log_Rx.py</code> starts by calling the <code>.begin()</code> method.
-Press the USR switch to terminate. You must call the <code>.end(wait = 0)
-</code> method, it writes the remaining buffers to file and closes it.
+This method loops, press USR switch to terminate. You must call the </br>
+<code>.end(wait = 0)</code> method, it writes the remaining buffers to file
+and closes it.
 </br>
 </br>
 Start the logger <code>log_Rx.py</code> before <code>log_Tx.py</code> it won't
@@ -41,7 +42,7 @@ the data will be corrupt.
 The transmitter <code>logger_Tx</code> has a <code>.timed()</code> method.
 It's use is to determine the period in micro seconds of the  <code>
 .transmit()</code> method. Using a REPL prompt or the <code>pyboard.py</code>
-command initiate you logger with a guessed frequency. <code>log =
+command initiate you logger with a guessed frequency. eg <code>log =
 data_logger.logger_Tx(1, ('X1', 'X2', 'X3'), 12, 400)</code> sets up a
 transmitter on UART 1 with 3 ADC pins using timer 12 at 400Hz. Make multiple
 calls to <code>log.timed()</code> to determine the usual period and outlier
